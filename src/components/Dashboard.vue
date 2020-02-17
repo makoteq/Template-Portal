@@ -1,0 +1,32 @@
+<template>
+  <div>
+    <h2>Dashboard</h2>
+    <p>Name: {{ user.name }}</p>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  name: "Login",
+  data() {
+    return {
+      user: {
+        name: "Jesse"
+      }
+    };
+  },
+  methods: {
+    getUserData: function() {
+      let self = this;
+      axios.get("/api/user").then(response => {
+        self.$set(this, "user", response.data.user);
+      });
+    }
+  },
+  mounted() {
+    this.getUserData();
+  }
+};
+</script>
