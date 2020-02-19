@@ -29,12 +29,13 @@ export default {
 
         axios
           .post("/api/login", data)
+          // eslint-disable-next-line no-unused-vars
           .then(response => {
-            console.log("Logged in");
             router.push("/dashboard");
+            console.warn(response);
           })
           .catch(errors => {
-            console.log("Cannot log in");
+            console.warn(errors);
           });
       };
       login();

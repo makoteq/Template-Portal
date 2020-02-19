@@ -1,28 +1,35 @@
+/* eslint-disable no-unused-vars */
 <template>
   <div>
     <h2>Dashboard</h2>
-    <p>Name: {{ user.name }}</p>
+    <h1>Welcome {{ user.name }}</h1>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-
+import router from "../router";
 export default {
   name: "Login",
   data() {
     return {
       user: {
-        name: "Jesse"
+        name: ""
       }
     };
   },
   methods: {
     getUserData: function() {
-      let self = this;
-      axios.get("/api/user").then(response => {
-        self.$set(this, "user", response.data.user);
-      });
+      axios
+        .get("/api/user")
+        .then(response => {
+          this.user.name = response.data.user.name;
+        })
+        .catch(errors => {
+          alert("You dont have permision to see this");
+          console.log(errors);
+          router.push("/");
+        });
     }
   },
   mounted() {
