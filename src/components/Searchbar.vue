@@ -1,12 +1,15 @@
 <template>
-  <div>
-    <input type="text" />
-  </div>
+  <div></div>
 </template>
 
 <script>
 export default {
-  name: "Searchbar"
+  name: "Searchbar",
+  data() {
+    return {
+      search: ""
+    };
+  }
 };
 </script>
 

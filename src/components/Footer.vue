@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <footer>footer</footer>
 </template>
 
 <script>
@@ -8,4 +8,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f17070;
+  color: white;
+  text-align: center;
+}
+</style>
