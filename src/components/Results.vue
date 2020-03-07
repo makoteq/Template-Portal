@@ -1,54 +1,42 @@
 <template>
   <div class="Results">
-    <b-container style="width:50vw;">
+    <b-container style="width:90vw;">
       <!-- Content here -->
       <input type="text" v-model="search" placeholder="Search title.." />
-      <b-row>
-        <b-card
-          v-for="post in filteredList"
-          :key="post.id"
-          :title="post.title"
-          img-src="https://i.imgur.com/1PCyDuD.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="width: 220px;height:350px;margin:10px;float:left"
-          class="mb-2"
-        >
-          <template v-slot:footer>
-            <b-button
-              target="_blank"
-              href="https://i.imgur.com/1PCyDuD.jpg"
-              variant="dark"
-            >
-              Go somewhere
-            </b-button>
-          </template>
-        </b-card>
+      <b-row align-h="center" class="mt-5 text-center">
+        <b-col v-for="post in filteredList" :key="post.id">
+          <b-card
+            :title="post.title"
+            img-src="https://i.imgur.com/1PCyDuD.jpg"
+            img-alt="Image"
+            img-top
+            tag="article"
+            class="w-100"
+            style="min-width:15vw"
+          >
+            <template v-slot:footer>
+              <b-button
+                target="_blank"
+                href="https://i.imgur.com/1PCyDuD.jpg"
+                variant="dark"
+              >
+                Go somewhere
+              </b-button>
+            </template>
+          </b-card>
+        </b-col>
       </b-row>
     </b-container>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Results",
   data() {
     return {
-      postList: [
-        {
-          id: "1",
-          title: "first"
-        },
-        {
-          id: "2",
-          title: "second"
-        },
-        {
-          id: "3",
-          title: "third"
-        }
-      ],
+      postList: [],
       search: ""
     };
   },
@@ -58,6 +46,11 @@ export default {
         return post.title.toLowerCase().includes(this.search.toLowerCase());
       });
     }
+  },
+  created() {
+    axios.get("/api/getposts").then(response => {
+      this.postList = response.data;
+    });
   }
 };
 </script>

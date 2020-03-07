@@ -1,15 +1,23 @@
 <template>
   <div>
     <nav id="nav">
-      <div class="item"></div>
-      <router-link :to="{ name: 'Login' }">Login</router-link>|
-      <a href="#" v-on:click="logout">Logout</a>
+      <router-link :to="{ name: 'Home' }">
+        <div class="item"><span>Home</span></div></router-link
+      >
+      <router-link :to="{ name: 'Login' }">
+        <div class="item"><span>Login</span></div></router-link
+      >
+
+      <a href="#" v-on:click="logout"
+        ><div class="item"><span>Logout</span></div></a
+      >
     </nav>
   </div>
 </template>
 
 <script>
 import router from "../router";
+
 import axios from "axios";
 export default {
   name: "Navbar",
@@ -31,7 +39,27 @@ export default {
 }
 
 .item {
+  float: left;
   height: 100%;
-  width: 30%;
+  width: 20%;
+  line-height: 100px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 800;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: block;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 3px;
+  &:hover {
+    background-color: #323536;
+  }
+}
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
 </style>
