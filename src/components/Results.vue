@@ -4,21 +4,25 @@
       <!-- Content here -->
       <input type="text" v-model="search" placeholder="Search title.." />
       <b-row align-h="center" class="mt-5 text-center">
-        <b-col v-for="post in filteredList" :key="post.id">
+        <b-col
+          style="text-align:center"
+          v-for="post in filteredList"
+          :key="post.id"
+        >
           <b-card
             :title="post.title"
             img-src="https://i.imgur.com/1PCyDuD.jpg"
             img-alt="Image"
             img-top
             tag="article"
-            class="w-100"
-            style="min-width:15vw"
+            class="w-100 card"
           >
             <template v-slot:footer>
               <b-button
                 target="_blank"
                 href="https://i.imgur.com/1PCyDuD.jpg"
                 variant="dark"
+                class="buttpn"
               >
                 Go somewhere
               </b-button>
@@ -56,4 +60,20 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@media screen and (min-width: 320px) {
+  .card {
+    min-width: 15vw;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .card {
+    min-width: 15vw;
+    max-width: 25%;
+  }
+}
+.card {
+  margin: 0 auto;
+}
+</style>

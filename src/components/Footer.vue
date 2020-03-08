@@ -7,7 +7,7 @@
           class="justify-content-md-center"
         >
           <b-col style="padding:0;max-width:100vw" col lg="2">
-            <span>Adress</span>
+            <span>Admin</span>
           </b-col>
           <b-col style="padding:0;max-width:100vw" cols="12" md="auto"
             ><span>Social</span>
