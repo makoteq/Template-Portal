@@ -7,7 +7,7 @@
       <a href="#" v-on:click="logout"
         ><div class="item_sm logout"><span class="login">Logout</span></div></a
       >
-      <div class="item_sm">|</div>
+      <div class="item_sm"><span>|</span></div>
       <router-link :to="{ name: 'Login' }">
         <div class="item_sm login">
           <span class="login">Login</span>
@@ -44,17 +44,13 @@ export default {
   float: left;
   height: 100%;
   width: 20%;
-  line-height: 100px;
   text-align: center;
   cursor: pointer;
   color: #fff;
   font-weight: 800;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  display: block;
+  display: table;
   text-transform: uppercase;
   font-size: 20px;
-  letter-spacing: 3px;
   &:hover {
     background-color: #323536;
   }
@@ -63,25 +59,21 @@ export default {
   float: right;
   height: 100%;
   width: 10%;
-  line-height: 100px;
   text-align: center;
   cursor: pointer;
   color: #fff;
   font-weight: 800;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  display: block;
   text-transform: uppercase;
   font-size: 20px;
   letter-spacing: 3px;
+  display: table;
   &:hover {
-    background-color: #323536;
+    background-color: #f26522;
   }
 }
 span {
-  display: inline-block;
+  display: table-cell;
   vertical-align: middle;
-  line-height: normal;
 }
 .login {
   font-size: 15px;
@@ -92,5 +84,8 @@ span {
   }
 }
 @media screen and (min-width: 1200px) {
+  .item_sm {
+    display: table;
+  }
 }
 </style>

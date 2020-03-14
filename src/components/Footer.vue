@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 span {
-  color: #fff;
+  color: #f26522;
   font-weight: 800;
   text-transform: uppercase;
   font-size: 20px;
