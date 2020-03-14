@@ -2,12 +2,15 @@
   <div class="Results">
     <b-container style="width:90vw;">
       <!-- Content here -->
-      <input
-        class="input"
-        type="text"
-        v-model="search"
-        placeholder="Search title.."
-      />
+      <form>
+        <input
+          class="input"
+          type="text"
+          v-model="search"
+          placeholder="Search title.."
+          name="search"
+        />
+      </form>
       <b-row align-h="center" class="mt-5 text-center">
         <b-col
           style="text-align:center"

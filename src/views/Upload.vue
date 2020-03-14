@@ -2,10 +2,9 @@
   <div>
     <form method="post" enctype="multipart/form-data" action="/api/upload">
       <input type="file" name="file" />
-      <input type="text" name="name" />
+      <input type="text" name="title" />
       <input type="submit" value="Submit" />
     </form>
-    <img src="/api/image.png" />
   </div>
 </template>
 

@@ -37,7 +37,6 @@ export default {
 #nav {
   height: 10vh;
   background-color: #373a3c;
-  margin-bottom: 5vh;
 }
 
 .item {
