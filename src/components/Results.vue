@@ -19,7 +19,7 @@
         >
           <b-card
             :title="post.title"
-            img-src="https://i.imgur.com/1PCyDuD.jpg"
+            :img-src="require('../assets/' + post.title + '.png')"
             img-alt="Image"
             img-top
             tag="article"
@@ -32,7 +32,7 @@
                 variant="dark"
                 class="buttpn"
               >
-                Go somewhere
+                Downloads
               </b-button>
             </template>
           </b-card>

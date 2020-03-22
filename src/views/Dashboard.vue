@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 <template>
   <div>
     <h2>Dashboard</h2>
