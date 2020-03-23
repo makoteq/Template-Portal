@@ -18,6 +18,7 @@ export default {
 <style lang="scss" scoped>
 #nav {
   height: 10vh;
+  width: 100%;
   background-color: #373a3c;
 }
 

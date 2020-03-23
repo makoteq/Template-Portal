@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container style="width:70vw;height:70vh">
+    <b-container style="width:100vw;height:70vh">
       <h2>Login</h2>
       <form v-on:submit="login">
         <input type="text" name="email" /><br />

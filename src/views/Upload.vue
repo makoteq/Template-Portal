@@ -1,10 +1,12 @@
 <template>
   <div>
-    <form method="post" enctype="multipart/form-data" action="/api/upload">
-      <input placeholder="Title" type="text" name="title" required /><br />
-      <input type="file" name="file" required />
-      <input type="submit" value="Submit" />
-    </form>
+    <b-container style="width:100vw;height:70vh">
+      <form method="post" enctype="multipart/form-data" action="/api/upload">
+        <input placeholder="Title" type="text" name="title" required /><br />
+        <input type="file" name="file" required />
+        <input type="submit" value="Submit" />
+      </form>
+    </b-container>
   </div>
 </template>
 

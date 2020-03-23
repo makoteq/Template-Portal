@@ -30,6 +30,8 @@ export default {
 #actionbar {
   text-align: center;
   font-weight: 800;
+  width: 50%;
+  margin: 0 auto;
   span {
     cursor: pointer;
     margin: 0 auto;

@@ -19,7 +19,7 @@
         >
           <b-card
             :title="post.title"
-            :img-src="require('../assets/' + post.title + '.png')"
+            :img-src="`${publicPath}img/` + post.title + `.png`"
             img-alt="Image"
             img-top
             tag="article"
@@ -49,7 +49,8 @@ export default {
   data() {
     return {
       postList: [],
-      search: ""
+      search: "",
+      publicPath: process.env.BASE_URL
     };
   },
   computed: {
