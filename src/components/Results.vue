@@ -28,7 +28,7 @@
             <template v-slot:footer>
               <b-button
                 target="_blank"
-                href="https://i.imgur.com/1PCyDuD.jpg"
+                @click="downloadWithAxios(post.title)"
                 variant="dark"
                 class="buttpn"
               >
@@ -64,6 +64,27 @@ export default {
     axios.get("/api/getposts").then(response => {
       this.postList = response.data;
     });
+  },
+  methods: {
+    forceFileDownload(response, post) {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", post + ".png"); //or any other extension
+      document.body.appendChild(link);
+      link.click();
+    },
+    downloadWithAxios(post) {
+      axios({
+        method: "get",
+        url: this.publicPath + "img/" + post + ".png",
+        responseType: "arraybuffer"
+      })
+        .then(response => {
+          this.forceFileDownload(response, post);
+        })
+        .catch(error => console.log("error occured" + error));
+    }
   }
 };
 </script>
