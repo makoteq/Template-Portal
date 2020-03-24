@@ -3,8 +3,8 @@
     <b-container style="width:100vw;height:70vh">
       <h2>Login</h2>
       <form v-on:submit="login">
-        <input type="text" name="email" /><br />
-        <input type="password" name="password" /><br />
+        <input type="text" name="email" required /><br />
+        <input type="password" name="password" required /><br />
         <input type="submit" value="Login" />
       </form>
     </b-container>

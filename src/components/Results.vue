@@ -11,7 +11,8 @@
           name="search"
         />
       </form>
-      <b-row align-h="center" class="mt-5 text-center">
+
+      <b-card-group columns>
         <b-col
           style="text-align:center"
           v-for="post in filteredList"
@@ -37,7 +38,7 @@
             </template>
           </b-card>
         </b-col>
-      </b-row>
+      </b-card-group>
     </b-container>
   </div>
 </template>
@@ -113,6 +114,7 @@ export default {
   border: none;
   border-bottom: solid 2px #373a3c;
   border-radius: 5px;
+  margin-bottom: 5vh;
   &:focus {
     outline: 0 !important;
   }

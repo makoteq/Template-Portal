@@ -22,6 +22,11 @@ export default {
       axios.get("/api/logout");
       router.push({ name: "Home" });
     }
+  },
+  data() {
+    return {
+      route: false
+    };
   }
 };
 </script>
