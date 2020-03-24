@@ -30,8 +30,8 @@
               <b-button
                 target="_blank"
                 @click="downloadWithAxios(post.title)"
-                variant="dark"
-                class="buttpn"
+                variant="success"
+                class="button"
               >
                 Downloads
               </b-button>

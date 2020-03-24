@@ -2,8 +2,9 @@
   <div>
     <nav id="nav">
       <router-link :to="{ name: 'Home' }">
-        <div class="item home"><span>Home</span></div></router-link
-      >
+        <div class="item home">
+          <span><img src="../assets/logo2.png" alt="logo"/></span></div
+      ></router-link>
       >
     </nav>
   </div>
