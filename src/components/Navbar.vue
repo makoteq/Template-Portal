@@ -17,10 +17,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/colors.scss";
 #nav {
   height: 10vh;
   width: 100%;
-  background-color: #373a3c;
+  background-image: url("../assets/background_blur.png");
 }
 
 .item {
@@ -34,9 +35,6 @@ export default {
   display: table;
   text-transform: uppercase;
   font-size: 20px;
-  &:hover {
-    background-color: #323536;
-  }
 }
 span {
   display: table-cell;

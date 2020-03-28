@@ -32,11 +32,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/colors.scss";
 #actionbar {
   text-align: center;
   font-weight: 800;
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
+  color: $brown;
   span {
     cursor: pointer;
     margin: 0 auto;
@@ -48,7 +50,7 @@ export default {
 }
 a {
   text-decoration: none;
-  color: #2c3e50;
+  color: $brown;
   &:hover {
     text-decoration: none;
   }

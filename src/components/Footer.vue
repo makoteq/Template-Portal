@@ -15,15 +15,20 @@
             </p>
           </b-col>
           <b-col style="padding:0;max-width:100vw" cols="12" md="auto"
-            ><span>Social</span>
-            <p class="list">
-              <router-link :to="{ name: 'Home' }"><i>Facebook</i></router-link>
-            </p>
-          </b-col>
-          <b-col style="padding:0;max-width:100vw" col lg="2"
             ><span>Contact</span>
             <p class="list">
               <router-link :to="{ name: 'Home' }"><i>Gmail</i></router-link>
+            </p>
+          </b-col>
+          <b-col style="padding:0;max-width:100vw" col lg="2"
+            ><span>Other</span>
+            <p class="list">
+              <router-link :to="{ name: 'Home' }"
+                ><i>Licence & terms</i></router-link
+              >
+            </p>
+            <p class="list">
+              <router-link :to="{ name: 'Home' }"><i>Team</i></router-link>
             </p>
           </b-col>
         </b-row>
@@ -39,18 +44,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/colors.scss";
 span {
-  color: #f26522;
+  color: $green;
   font-weight: 800;
   text-transform: uppercase;
   font-size: 20px;
   letter-spacing: 3px;
 }
 footer {
-  background-color: rgb(55, 58, 60);
+  margin-top: 20vh;
+  background-color: $main;
   padding: 70px 0px;
 }
 .list {
+  margin: 5px;
 }
 a {
   color: white;

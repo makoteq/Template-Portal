@@ -13,31 +13,29 @@
       </form>
 
       <b-card-group columns>
-        <b-col
-          style="text-align:center"
+        <b-card
+          :img-src="`${publicPath}img/` + post.title + `.png`"
+          img-alt="Image"
+          img-top
           v-for="post in filteredList"
           :key="post.id"
+          tag="article"
+          class="card"
         >
-          <b-card
-            :title="post.title"
-            :img-src="`${publicPath}img/` + post.title + `.png`"
-            img-alt="Image"
-            img-top
-            tag="article"
-            class="w-100 card"
-          >
-            <template v-slot:footer>
-              <b-button
-                target="_blank"
-                @click="downloadWithAxios(post.title)"
-                variant="success"
-                class="button"
-              >
-                Downloads
-              </b-button>
-            </template>
-          </b-card>
-        </b-col>
+          <b-card-title style="font-weight:700">
+            {{ post.title }}
+          </b-card-title>
+          <template v-slot:footer>
+            <b-button
+              target="_blank"
+              @click="downloadWithAxios(post.title)"
+              variant="success"
+              class="button"
+            >
+              <span style="font-weight:700">Download</span>
+            </b-button>
+          </template>
+        </b-card>
       </b-card-group>
     </b-container>
   </div>
@@ -92,31 +90,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@media screen and (min-width: 320px) {
-  .card {
-    min-width: 15vw;
-    max-width: 100%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .card {
-    min-width: 15vw;
-    max-width: 25%;
-  }
-}
-.card {
-  margin: 0 auto;
-  margin-top: 10px;
-}
+@import "../assets/colors.scss";
 .input {
   width: 40vw;
   height: 40px;
   border: none;
-  border-bottom: solid 2px #373a3c;
+  border-bottom: solid 5px $green;
   border-radius: 5px;
   margin-bottom: 5vh;
+  background-color: $main2;
   &:focus {
     outline: 0 !important;
+  }
+}
+.card {
+  color: $green;
+  border-radius: 25px;
+  background-color: $main2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  &:hover {
   }
 }
 </style>

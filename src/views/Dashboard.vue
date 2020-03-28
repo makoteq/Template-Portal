@@ -16,7 +16,7 @@
           ADD
         </b-button>
         <b-button
-          @click="deleteEl(row.item.id)"
+          @click="deleteEl(row.item.id, row.item.title)"
           size="sm"
           variant="danger"
           class="mr-2"
@@ -57,9 +57,10 @@ export default {
     };
   },
   methods: {
-    deleteEl(id) {
+    deleteEl(id, title) {
       let data = {
-        id: id
+        id: id,
+        title: title
       };
       axios
         .post("api/delete", data)
