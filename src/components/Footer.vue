@@ -21,7 +21,7 @@
           <b-col style="padding:0;max-width:100vw" cols="12" md="auto"
             ><span>Contact</span>
             <p class="list">
-              <router-link :to="{ name: 'Home' }"><i>Gmail</i></router-link>
+              <router-link :to="{ name: 'Home' }"><i>Mail</i></router-link>
             </p>
           </b-col>
           <b-col style="padding:0;max-width:100vw" col lg="2"

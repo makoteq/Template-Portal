@@ -3,7 +3,7 @@
     <b-container style="width:100vw;height:70vh">
       <h2>Login</h2>
       <form v-on:submit="login">
-        <input type="text" name="email" required /><br />
+        <input placeholder="ID" type="text" name="id" required /><br />
         <input type="password" name="password" required /><br />
         <input type="submit" value="Login" />
       </form>
@@ -14,18 +14,17 @@
 <script>
 import router from "../router";
 import axios from "axios";
-
 export default {
   name: "Login",
   methods: {
     login: e => {
       e.preventDefault();
-      let email = e.target.elements.email.value;
+      let id = e.target.elements.id.value;
       let password = e.target.elements.password.value;
 
       let login = () => {
         let data = {
-          email: email,
+          email: id,
           password: password
         };
 

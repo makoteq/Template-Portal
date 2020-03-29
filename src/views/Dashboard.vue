@@ -110,3 +110,8 @@ export default {
   }
 };
 </script>
+v-<style lang="scss">
+th {
+  color: white;
+}
+</style>
