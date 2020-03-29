@@ -21,7 +21,7 @@ export default {
 #nav {
   height: 10vh;
   width: 100%;
-  background-image: url("../assets/background_blur.png");
+  background-image: url("../assets/background.png");
 }
 
 .item {

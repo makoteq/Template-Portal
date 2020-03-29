@@ -32,7 +32,7 @@
               variant="success"
               class="button"
             >
-              <span style="font-weight:700">Download</span>
+              <span style="font-weight:700">Pobierz</span>
             </b-button>
           </template>
         </b-card>

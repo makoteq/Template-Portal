@@ -45,3 +45,20 @@ export default {
   }
 };
 </script>
+v-<style lang="scss" scoped>
+@import "../assets/colors.scss";
+input {
+  background-color: #f3f3f3;
+  border: none;
+  line-height: 1.5;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  transition: all 0.4s;
+  &:focus {
+    outline: 0;
+    background-color: #dbdbdb;
+  }
+}
+</style>

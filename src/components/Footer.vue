@@ -13,6 +13,10 @@
                 ><i>Admin panel</i></router-link
               >
             </p>
+            <p>
+              <router-link :to="{ name: 'Login' }"> <i>Login</i></router-link>
+            </p>
+            <p><i @click="logout">Logout</i></p>
           </b-col>
           <b-col style="padding:0;max-width:100vw" cols="12" md="auto"
             ><span>Contact</span>
@@ -38,8 +42,16 @@
 </template>
 
 <script>
+import axios from "axios";
+import router from "../router";
 export default {
-  name: "Footer"
+  name: "Footer",
+  methods: {
+    logout: function() {
+      axios.get("/api/logout");
+      router.push({ name: "Home" });
+    }
+  }
 };
 </script>
 
@@ -67,5 +79,9 @@ a {
     text-decoration: none;
     color: rgb(219, 219, 219);
   }
+}
+i {
+  cursor: pointer;
+  color: white;
 }
 </style>
