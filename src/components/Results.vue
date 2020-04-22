@@ -9,6 +9,7 @@
           v-model="search"
           placeholder="Search title.."
           name="search"
+          style="color:white;"
         />
       </form>
 
@@ -49,18 +50,18 @@ export default {
     return {
       postList: [],
       search: "",
-      publicPath: process.env.BASE_URL
+      publicPath: process.env.BASE_URL,
     };
   },
   computed: {
     filteredList() {
-      return this.postList.filter(post => {
+      return this.postList.filter((post) => {
         return post.title.toLowerCase().includes(this.search.toLowerCase());
       });
-    }
+    },
   },
   created() {
-    axios.get("/api/getposts").then(response => {
+    axios.get("/api/getposts").then((response) => {
       this.postList = response.data;
     });
   },
@@ -77,14 +78,14 @@ export default {
       axios({
         method: "get",
         url: this.publicPath + "img/" + post + ".png",
-        responseType: "arraybuffer"
+        responseType: "arraybuffer",
       })
-        .then(response => {
+        .then((response) => {
           this.forceFileDownload(response, post);
         })
-        .catch(error => console.log("error occured" + error));
-    }
-  }
+        .catch((error) => console.log("error occured" + error));
+    },
+  },
 };
 </script>
 
@@ -105,7 +106,7 @@ export default {
 }
 .card {
   color: $green;
-  border-radius: 25px;
+  border-radius: 15px;
   background-color: $main2;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   &:hover {

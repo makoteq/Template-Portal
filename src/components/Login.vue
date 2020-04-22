@@ -4,7 +4,12 @@
       <h2>Login</h2>
       <form v-on:submit="login">
         <input placeholder="ID" type="text" name="id" required /><br />
-        <input type="password" name="password" required /><br />
+        <input
+          placeholder="PASSWORD"
+          type="password"
+          name="password"
+          required
+        /><br />
         <input type="submit" value="Login" />
       </form>
     </b-container>
@@ -17,7 +22,7 @@ import axios from "axios";
 export default {
   name: "Login",
   methods: {
-    login: e => {
+    login: (e) => {
       e.preventDefault();
       let id = e.target.elements.id.value;
       let password = e.target.elements.password.value;
@@ -25,23 +30,23 @@ export default {
       let login = () => {
         let data = {
           email: id,
-          password: password
+          password: password,
         };
 
         axios
           .post("/api/login", data)
           // eslint-disable-next-line no-unused-vars
-          .then(response => {
+          .then((response) => {
             router.push("/dashboard");
             console.warn(response);
           })
-          .catch(errors => {
+          .catch((errors) => {
             console.warn(errors);
           });
       };
       login();
-    }
-  }
+    },
+  },
 };
 </script>
 v-<style lang="scss" scoped>

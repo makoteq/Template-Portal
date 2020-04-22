@@ -8,18 +8,15 @@
           v-model="data"
           @change="check"
           type="text"
+          :class="{ active: is_exist }"
           name="title"
           required
-        /><img
-          v-show="is_exist"
-          width="45px"
-          src="https://img.icons8.com/flat_round/64/000000/ok-hand.png"
         /><br />
         <input name="terms" type="checkbox" required />
         <label for="terms">Akceptuję <a href=""> regulamin </a>serwisu</label
         ><br />
         <input style="color:black" type="file" name="file" required />
-        <input type="submit" :disabled="!is_exist" value="Submit" />
+        <input type="submit" :disabled="isDisabled" value="Submit" />
       </form>
     </b-container>
   </div>
@@ -33,20 +30,20 @@ export default {
   data() {
     return {
       is_exist: 0,
-      data: ""
+      data: "",
     };
   },
   methods: {
     check: debounce(function() {
       this.is_exist = 0;
       let data = {
-        title: this.data
+        title: this.data,
       };
 
       axios
         .post("/api/check_if_exist", data)
         // eslint-disable-next-line no-unused-vars
-        .then(response => {
+        .then((response) => {
           console.warn(response);
           if (response.data[0].title == data.title) {
             this.is_exist = 1;
@@ -54,11 +51,16 @@ export default {
             this.is_exist = 0;
           }
         })
-        .catch(errors => {
+        .catch((errors) => {
           console.warn(errors);
         });
-    }, 500)
-  }
+    }, 500),
+  },
+  computed: {
+    isDisabled: function() {
+      return Boolean(this.is_exist);
+    },
+  },
 };
 </script>
 
@@ -83,5 +85,8 @@ a {
   &:hover {
     color: $green;
   }
+}
+.active {
+  background-color: red;
 }
 </style>

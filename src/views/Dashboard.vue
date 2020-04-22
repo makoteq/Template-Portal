@@ -51,23 +51,23 @@ export default {
       publicPath: process.env.BASE_URL,
       postList: [],
       user: {
-        name: ""
+        name: "",
       },
-      fields: ["id", "title", "show_details"]
+      fields: ["id", "title", "show_details"],
     };
   },
   methods: {
     deleteEl(id, title) {
       let data = {
         id: id,
-        title: title
+        title: title,
       };
       axios
         .post("api/delete", data)
-        .then(response => {
+        .then((response) => {
           console.warn(response);
         })
-        .catch(errors => {
+        .catch((errors) => {
           console.warn(errors);
         });
       location.reload();
@@ -75,14 +75,14 @@ export default {
     addEl(id, title) {
       let data = {
         id: id,
-        title: title
+        title: title,
       };
       axios
         .post("api/add", data)
-        .then(response => {
+        .then((response) => {
           console.warn(response);
         })
-        .catch(errors => {
+        .catch((errors) => {
           console.warn(errors);
         });
       location.reload();
@@ -90,27 +90,30 @@ export default {
     getUserData: function() {
       axios
         .get("/api/user")
-        .then(response => {
+        .then((response) => {
           this.user.name = response.data.user.name;
         })
-        .catch(errors => {
+        .catch((errors) => {
           console.log(errors);
           router.push("/");
         });
-    }
+    },
   },
   created() {
-    axios.get("/api/getposts_temp").then(response => {
+    axios.get("/api/getposts_temp").then((response) => {
       this.postList = response.data;
     });
   },
 
   mounted() {
     this.getUserData();
-  }
+  },
 };
 </script>
 v-<style lang="scss">
+td {
+  color: white;
+}
 th {
   color: white;
 }

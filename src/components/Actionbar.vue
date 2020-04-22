@@ -15,9 +15,9 @@ export default {
   name: "Actionbar",
   data() {
     return {
-      route: false
+      route: false,
     };
-  }
+  },
 };
 </script>
 
@@ -30,7 +30,9 @@ export default {
   margin: 0 auto;
   color: $brown;
   span {
+    letter-spacing: 2px;
     cursor: pointer;
+    font-size: 1.2em;
     margin: 0 auto;
     &:hover {
       text-decoration: none;

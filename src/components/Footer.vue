@@ -1,7 +1,7 @@
 <template>
   <div>
     <footer>
-      <b-container style="color:black; height:20vh">
+      <b-container style="color:black; min-height:20vh">
         <b-row
           style="padding:0;max-width:100vw;"
           class="justify-content-md-center"
@@ -50,8 +50,8 @@ export default {
     logout: function() {
       axios.get("/api/logout");
       router.push({ name: "Home" });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -65,7 +65,7 @@ span {
   letter-spacing: 3px;
 }
 footer {
-  margin-top: 20vh;
+  margin-top: 10vh;
   background-color: $main;
   padding: 70px 0px;
 }

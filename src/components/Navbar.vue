@@ -3,16 +3,17 @@
     <nav id="nav">
       <router-link :to="{ name: 'Home' }">
         <div class="item home">
-          <span><img src="../assets/logo2.png" alt="logo"/></span></div
+          <span
+            ><img id="main" src="../assets/logo2.png" alt="logo"
+          /></span></div
       ></router-link>
-      >
     </nav>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Navbar"
+  name: "Navbar",
 };
 </script>
 
@@ -23,7 +24,12 @@ export default {
   width: 100%;
   background-image: url("../assets/background.png");
 }
-
+#main {
+  transition: ease-out 0.1s;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
 .item {
   float: left;
   height: 100%;
